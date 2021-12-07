@@ -1,5 +1,3 @@
-from os import read
-
 def read_input_from_file(filename):
     inputs = []
     input_file = open(filename, 'r')
@@ -56,15 +54,10 @@ def main():
     numbers = list(map(int, numbers))
     board = []
     board_results = []
-    boards = []
     for line in input_lines[2:]:
         if line == "":
-            #print(f"Board: {board}")
             result = play_bingo(board, numbers)
             if result[0] >= 0:
-                #print(f"Board: {board}")
-                #print(f"Numbers of numbers drawn: {result[2]}")
-                #print(f"Final score: {result[0]*result[1]}")
                 board_results.append(result)
             board.clear()
         else:
